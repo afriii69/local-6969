@@ -8,3 +8,6 @@
 - 🔒 **Akses** : Mendapatkan akses ke GPT melalui browser anda di localhost:6969.
 - 💬 **Chat**  : Chat gpt sepuasnya melalui terminal. Bisa di sebut API gratis.
 - 📂 **Backup**: Setiap chat akan di store di chat.txt bisa kamu gunakan untuk merespon dengan bahasa code lain dengan pembacaan txt
+
+
+## 💽 Instalasi
