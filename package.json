@@ -1,0 +1,16 @@
+{
+  "name": "4.-project-pak-dexi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go_ai": "powershell.exe -Command \"Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' -ArgumentList '--remote-debugging-port=6969', '--user-data-dir=C:\\chrome-dev-session'; Start-Sleep -Seconds 3; node index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "puppeteer": "^24.36.1"
+  }
+}
