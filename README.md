@@ -9,8 +9,30 @@
 
 
 ## 💽 Instalasi
-### PART 1 - Download SC
+#### PART 1 - Install Node js [Win]
 ```bash
-$ git clone 
+$ winget install -e --id CoreyButler.NVMforWindows
+$ nvm install lts
+$ nvm use lts
+$ node -v
+$ npm -v
+```
+atau bisa langsung install di sini [NODE JS](https://nodejs.org/en/download) <br><br>
+
+
+#### PART 2 - Download SC
+```bash
+$ git clone https://github.com/afriii69/local-6969.git
+$ cd local-6969
+```
+jika sudah di clone, bakal ada folder bernama local-6969. Gunakan Git untuk clone <br><br>
+
+
+#### PART 3 - Install modul dan Jalankan SC
+```bash
+$ npm install
 $ npm run go_ai
 ```
+<br>
+
+![Copyright](https://img.shields.io/badge/Copyright-©%20Afriii69-blue)
