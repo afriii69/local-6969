@@ -1,6 +1,6 @@
 # ♨️ GPT TERMINAL 
 
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.2.0-brightgreen)](https://nodejs.org/)  [![NPM Version](https://img.shields.io/badge/npm-%3E%3D10.7.0-blue)](https://www.npmjs.com/)  [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)  
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.2.0-brightgreen)](https://nodejs.org/)  [![NPM Version](https://img.shields.io/badge/npm-%3E%3D10.7.0-blue)](https://www.npmjs.com/)  [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)  ![Copyright](https://img.shields.io/badge/Copyright-©%20Afriii69-blue)
 
 ## ⚡ Fitur Utama
 - 🔒 **Akses** : Mendapatkan akses ke GPT melalui browser anda di localhost:6969.
@@ -33,6 +33,3 @@ jika sudah di clone, bakal ada folder bernama local-6969. Gunakan Git untuk clon
 $ npm install
 $ npm run go_ai
 ```
-<br>
-
-![Copyright](https://img.shields.io/badge/Copyright-©%20Afriii69-blue)
