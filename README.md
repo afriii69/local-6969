@@ -9,3 +9,8 @@
 
 
 ## 💽 Instalasi
+### PART 1 - Download SC
+```bash
+$ git clone 
+$ npm run go_ai
+```
