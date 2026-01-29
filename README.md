@@ -14,8 +14,8 @@
 $ winget install -e --id CoreyButler.NVMforWindows
 $ nvm install lts
 $ nvm use lts
-$ node -v
-$ npm -v
+$ node -v      # Check jika node sudah terinstall. output contoh: 22.2.0
+$ npm -v       # Check jika npm sudah terinstall. output contoh: 10.7.0
 ```
 atau bisa langsung install di sini [NODE JS](https://nodejs.org/en/download) <br><br>
 
