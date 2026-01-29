@@ -61,22 +61,7 @@ async function main() {
                 ];
 
                 let inputFound = false;
-                for (const selector of inputSelectors) {
-                    try {
-                        await page.waitForSelector(selector, { timeout: 2000 });
-                        await page.click(selector);
-
-                        for (const char of message) {
-                            await page.keyboard.press(char);
-                            await new Promise(resolve => setTimeout(resolve, Math.random() * 53));
-                        }
-
-                        inputFound = true;
-                        break;
-                    } catch (e) {
-                        continue;
-                    }
-                }
+                
 
                 if (!inputFound) {
                     console.log('Input field not found, pls check is gpt loaded correctly or not');
@@ -173,6 +158,7 @@ async function main() {
 }
 
 main().catch(console.error);
+
 
 
 
