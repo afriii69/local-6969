@@ -114,7 +114,24 @@ async function main() {
                 let stableCount = 0;
                 const maxStableChecks = 30;
 
-                
+                while (stableCount < 5 && attempts < maxStableChecks) {
+                    try {
+                        const responseElement = await page.$('article[data-turn="assistant"]:last-child .markdown.prose.w-full.wrap-break-word.markdown-new-styling');
+                        if (responseElement) {
+                            const currentText = await page.evaluate(el => el.textContent, responseElement);
+                            if (currentText === previousText && currentText.trim()) {
+                                stableCount++;
+                            } else {
+                                stableCount = 0;
+                                previousText = currentText;
+                            }
+                        }
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        attempts++;
+                    } catch (e) {
+                        break;
+                    }
+                }
 
                 let response = 'gd respon';
                 const responseSelectors = [
@@ -156,5 +173,6 @@ async function main() {
 }
 
 main().catch(console.error);
+
 
 
