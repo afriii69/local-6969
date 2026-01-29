@@ -23,15 +23,15 @@ async function main() {
         console.log('browser didnt open chatgpt, lets add gpt page...');
         page = await browser.newPage();
         await page.goto('https://chatgpt.com/');
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
     try {
         const logoutSelector = 'a[href="#"][class*="text-token-text-secondary"]';
-        await page.waitForSelector(logoutSelector, { timeout: 5000 });
+        await page.waitForSelector(logoutSelector, { timeout: 4000 });
         await page.click(logoutSelector);
         console.log('Clicked "Stay logged out"');
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (e) {
         console.log('"Stay logged out" not found or already handled');
     }
@@ -41,13 +41,12 @@ async function main() {
         output: process.stdout
     });
 
-    console.log('\nChatGPT Terminal Interface Ready!');
+    console.log('\nChatGPT Ready!');
     console.log('Type your messages and press Enter. Type "exit" to quit.\n');
 
     function ask() {
         rl.question('You: ', async (message) => {
             if (message.toLowerCase() === 'exit') {
-                console.log('Goodbye!');
                 await browser.disconnect();
                 rl.close();
                 return;
@@ -80,7 +79,7 @@ async function main() {
                 }
 
                 if (!inputFound) {
-                    console.log('Could not find input field. Make sure ChatGPT page is loaded and ready.');
+                    console.log('Input field not found, pls check is gpt loaded correctly or not');
                     ask();
                     return;
                 }
@@ -98,7 +97,7 @@ async function main() {
                         const loadingElement = await page.$('[data-testid="loading"]');
                         isLoading = loadingElement !== null;
                         if (isLoading) {
-                            await new Promise(resolve => setTimeout(resolve, 500));
+                            await new Promise(resolve => setTimeout(resolve, 100));
                             attempts++;
                         }
                     } catch (e) {
@@ -107,7 +106,7 @@ async function main() {
                 }
 
                 if (attempts >= maxAttempts) {
-                    console.log('Response timeout, proceeding...');
+                    console.log('Response timeout, maybe ur network didnt fast enough?');
                 }
 
                 console.log('GPT Writing...');
@@ -133,8 +132,6 @@ async function main() {
                         break;
                     }
                 }
-
-                console.log('Response appears to be complete.');
 
                 let response = 'gd respon';
                 const responseSelectors = [
@@ -166,9 +163,8 @@ async function main() {
                 console.log(`AI: ${response}\n`);
 
             } catch (error) {
-                console.error('Error during interaction:', error.message);
+                console.error('Error Interaction:', error.message);
             }
-
             ask();
         });
     }
@@ -177,3 +173,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
